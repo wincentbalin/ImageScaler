@@ -94,7 +94,7 @@ int main(int argc, char **argv)
             for (auto &fn: regular_files) {
                 fs::path tfn = out_dir / fs::path(fn).filename();
                 if (vm.count("verbose")) {
-                    cout << "Processing " << fn << " to " << tfn << endl;
+                    cout << "Processing " << fn << " to " << tfn.string() << endl;
                 }
                 scale_image_file(fs::path(fn), tfn, width, height);
             }
